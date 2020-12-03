@@ -11,5 +11,5 @@ RUN mvn -f /home/app/pom.xml clean package
 #
 FROM openjdk:8-jre-slim
 COPY --from=build /home/app/target/crehana-backend.jar /usr/local/lib/crehana-backend.jar
-EXPOSE 8087
+EXPOSE 8081
 ENTRYPOINT ["java","-jar","/usr/local/lib/crehana-backend.jar"]
